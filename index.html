@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WDD 231 - Course Home Page" />
+  <meta name="author" content="Alliana Okaikai Tenadu" />
+  <title>Alliana Okaikai Tenadu - Course Home Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css" />
+  <link rel="stylesheet" href="styles/large.css" media="(min-width: 640px)" />
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/date.js" defer></script>
+  <script src="scripts/course.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <img src="images/alliana-picture.jpg" alt="Alliana Okaikai Tenadu" />
+      <h1>Alliana Okaikai Tenadu</h1>
+    </div>
+  </header>
+  <nav>
+    <ul id="nav-menu">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">Chamber</a></li>
+      <li><a href="#">Final</a></li>
+      <li><a href="https://github.com/allianatenadu" target="_blank">GitHub Profile</a></li>
+      <li><a href="https://linkedin.com/in/allianatenadu" target="_blank">LinkedIn</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2>Home</h2>
+    
+    <div class="content-grid">
+      <section class="course-work">
+        <h3>Course Work</h3>
+        <ul>
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+        </ul>
+      </section>
+      
+      <section class="location">
+        <h3> Ghana, Greater Accra</h3>
+        <div class="location-content">
+          <img src="images/location.jpg" alt="Ghana-dish" />
+          <p>Kwame Nkrumah Memorial Park </p>
+        </div>
+      </section>
+    </div>
+    
+    <section class="certificate">
+      <h3>Web and Computer Programming Certificate</h3>
+      <div id="course-buttons">
+        <button onclick="filterCourses('all')" class="active">All</button>
+        <button onclick="filterCourses('cse')">CSE</button>
+        <button onclick="filterCourses('wdd')">WDD</button>
+      </div>
+      <div id="course-container" class="course-grid">
+        <!-- Course cards will be inserted here by JavaScript -->
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>©2025 <span class="highlight">❖</span> Alliana Okaikai Tenadu <span class="highlight">❖</span> Ghana <img src="images/Ghana-flag.png" alt="Madagascar Flag" class="flag"></p>
+    <p id="lastModified">Last Update: 01/01/1970 12:00:00</p>
+  </footer>
+</body>
+</html>
