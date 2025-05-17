@@ -1,0 +1,58 @@
+[
+  {
+    "name": "AllStar Plumbing",
+    "address": "456 Pipe Lane",
+    "phone": "555-8765",
+    "website": "https://allstarplumbing.com",
+    "image": "allstarplumbing.jpg",
+    "membership": 3
+  },
+  {
+    "name": "Green Valley Grocers",
+    "address": "123 Food Ave",
+    "phone": "555-1234",
+    "website": "https://greenvalleygrocers.com",
+    "image": "greenvalleygrocers.jpg",
+    "membership": 2
+  },
+  {
+    "name": "Spark Cleaners",
+    "address": "789 Laundry Rd",
+    "phone": "555-2468",
+    "website": "https://sparkcleaners.com",
+    "image": "sparkcleaners.jpg",
+    "membership": 1
+  },
+  {
+    "name": "Tech Innovations",
+    "address": "101 Digital Drive",
+    "phone": "555-3690",
+    "website": "https://techinnovations.com",
+    "image": "techinnovations.jpg",
+    "membership": 3
+  },
+  {
+    "name": "Sunrise Bakery",
+    "address": "222 Pastry Place",
+    "phone": "555-7890",
+    "website": "https://sunrisebakery.com",
+    "image": "sunrisebakery.jpg",
+    "membership": 2
+  },
+  {
+    "name": "Harmony Health Clinic",
+    "address": "333 Wellness Way",
+    "phone": "555-4567",
+    "website": "https://harmonyhealth.com",
+    "image": "harmonyhealth.jpg",
+    "membership": 3
+  },
+  {
+    "name": "Reliable Auto Repair",
+    "address": "444 Mechanic Street",
+    "phone": "555-8901",
+    "website": "https://reliableauto.com",
+    "image": "reliableauto.jpg",
+    "membership": 1
+  }
+]

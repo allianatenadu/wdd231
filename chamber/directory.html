@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Teandu Chamber of Commerce Directory Page - Browse our member businesses">
+  <meta name="author" content="Alliana O. Tenadu">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Teandu Chamber of Commerce Directory">
+  <meta property="og:description" content="Browse local businesses and organizations that are members of the Teandu Chamber of Commerce">
+  <meta property="og:image" content="images/teandu-chamber-logo.jpg">
+  <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/directory.html">
+  <meta property="og:type" content="website">
+  
+  <title>Teandu Chamber of Commerce Directory</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <style>
+    /* Inline critical error and loading styles */
+    .loading { text-align: center; padding: 2rem; color: #666; }
+    .error { background-color: #ffdddd; color: #d33; padding: 1rem; border-radius: 8px; text-align: center; margin: 1rem 0; }
+  </style>
+  
+  <!-- No JavaScript Fallback -->
+  <script>document.documentElement.classList.remove("js-disabled");</script>
+</head>
+<body class="js-disabled">
+  <header>
+    <h1>The Teandu Chamber</h1>
+    <nav>
+      <button id="menu-toggle" aria-label="Toggle navigation menu">☰ Menu</button>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html" class="active">Directory</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Business Directory</h2>
+    
+    <div class="view-toggle">
+      <button id="grid" class="active" aria-label="Switch to grid view">Grid View</button>
+      <button id="list" aria-label="Switch to list view">List View</button>
+    </div>
+    
+    
+    
+    <div id="directory" class="grid">
+      <!-- Member cards will be added here via JavaScript -->
+      <p class="loading">Loading directory data...</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Teandu Chamber of Commerce | WDD 231</p>
+    <p><span id="lastModified"></span></p>
+    <p>Contact: info@tenaduchamber.org | +233 30 123 4567</p>
+  </footer>
+
+  <!-- Place members.json in the root for easier access -->
+  <script>
+    // Create a debug log function
+    function log(message) {
+      console.log(`[Directory] ${message}`);
+    }
+    
+    // Check if directory element exists
+    window.addEventListener('DOMContentLoaded', function() {
+      if (!document.getElementById('directory')) {
+        console.error('Critical error: #directory element not found in HTML');
+      }
+      log('Page loaded, directory element check complete');
+    });
+  </script>
+  
+  <!-- Load scripts in the correct order, with script.js first -->
+  <script src="js/script.js" defer></script>
+  <script src="js/members.js" defer></script>
+</body>
+</html>
