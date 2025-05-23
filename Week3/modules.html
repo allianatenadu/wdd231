@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modular JS</title>
+  <link rel="stylesheet" href="modules.css" />
+</head>
+<body>
+   <div class="container">
+        <h1 id="courseTitle">Course Management System</h1>
+        
+        <div class="controls">
+            <div class="form-group">
+                <label for="sectionNumber">Select Section:</label>
+                <select id="sectionNumber">
+                    <option value="">Choose a section...</option>
+                    <option value="1">Section 1</option>
+                    <option value="2">Section 2</option>    
+                    <option value="3">Section 3</option>
+                </select>
+            </div>
+            
+            <button id="enrollStudent">Enroll Student</button>
+            <button id="dropStudent" class="drop">Drop Student</button>
+        </div>
+        
+        <div class="sections-output">
+            <h3>Course Sections</h3>
+            <div id="sectionsDisplay">
+    <div class="section-item">
+        <div class="section-info">
+            <div class="section-number">Section 1</div>
+            <div>Instructor: Bro T</div>
+            <div>Room: STC 353</div>
+            <div>Days: TTh</div>
+        </div>
+        <div class="enrollment-count">26 enrolled</div>
+    </div>
+    
+    <div class="section-item">
+        <div class="section-info">
+            <div class="section-number">Section 2</div>
+            <div>Instructor: Sis A</div>
+            <div>Room: STC 347</div>
+            <div>Days: TTh</div>
+        </div>
+        <div class="enrollment-count">28 enrolled</div>
+    </div>
+    
+    <div class="section-item">
+        <div class="section-info">
+            <div class="section-number">Section 3</div>
+            <div>Instructor: Bro B</div>
+            <div>Room: STC 348</div>
+            <div>Days: TTh</div>
+        </div>
+        <div class="enrollment-count">25 enrolled</div>
+    </div>
+</div>
+        </div>
+        
+    </div>
+  <script type="module" src="scripts/modules.mjs"></script>
+</body>
+</html>
