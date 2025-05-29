@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the Teandu Chamber of Commerce - Supporting local businesses and fostering economic growth in our community">
+    <meta name="author" content="Alliana O. Tenadu">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Join Teandu Chamber of Commerce">
+    <meta property="og:description" content="Join the Teandu Chamber of Commerce and connect with local businesses, access resources, and grow your business">
+    <meta property="og:image" content="images/teandu-chamber-logo.jpg">
+    <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/join.html">
+    <meta property="og:type" content="website">
+    
+    <title>Join Our Chamber - Teandu Chamber of Commerce</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/join.css">
+</head>
+<body>
+    <header>
+        <h1>The Teandu Chamber</h1>
+        <nav>
+            <button id="menu-toggle" aria-label="Toggle navigation menu">☰ Menu</button>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="join.html" class="active">Join</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="main-content">
+            <div class="form-section">
+                <h1>Join Our Chamber</h1>
+                <form method="get" action="thankyou.html" id="membershipForm">
+                    <div class="form-grid">
+                        <label class="form-group">
+                            First Name *
+                            <input type="text" name="firstName" title="First Name" required autocomplete="given-name">
+                        </label>
+
+                        <label class="form-group">
+                            Last Name *
+                            <input type="text" name="lastName" title="Last Name" required autocomplete="family-name">
+                        </label>
+
+                        <label class="form-group full-width">
+                            Organizational Title
+                            <input type="text" name="orgTitle" title="Organizational Title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" title="Please enter at least 7 characters using only letters, spaces, and hyphens">
+                        </label>
+
+                        <label class="form-group">
+                            Email Address *
+                            <input type="email" name="email" title="Email Address" required autocomplete="email" placeholder="john.doe@example.com">
+                        </label>
+
+                        <label class="form-group">
+                            Mobile Phone *
+                            <input type="tel" name="phone" title="Mobile Phone" required autocomplete="tel">
+                        </label>
+
+                        <label class="form-group full-width">
+                            Business/Organization Name *
+                            <input type="text" name="businessName" title="Business Name" required autocomplete="organization">
+                        </label>
+
+                        <label class="form-group full-width">
+                            Membership Level
+                            <select name="membershipLevel" title="Membership Level">
+                                <option value="np">NP Membership (Non-Profit - Free)</option>
+                                <option value="bronze">Bronze Membership</option>
+                                <option value="silver">Silver Membership</option>
+                                <option value="gold">Gold Membership</option>
+                            </select>
+                        </label>
+
+                        <label class="form-group full-width">
+                            Business Description
+                            <textarea name="businessDescription" title="Business Description" placeholder="Tell us about your business or organization..."></textarea>
+                        </label>
+
+                        <input type="hidden" name="timestamp" id="timestamp">
+                    </div>
+
+                    <input type="submit" value="Submit Application" class="submit-btn">
+                </form>
+            </div>
+
+            <div class="membership-section">
+                <div class="membership-cards">
+                    <div class="membership-card">
+                        <h3>NP Membership</h3>
+                        <div class="price">FREE</div>
+                        <p>Perfect for non-profit organizations</p>
+                        <button class="learn-more-btn" onclick="openModal('npModal')">Learn More</button>
+                    </div>
+
+                    <div class="membership-card">
+                        <h3>Bronze</h3>
+                        <div class="price">$200/year</div>
+                        <p>Great for small businesses</p>
+                        <button class="learn-more-btn" onclick="openModal('bronzeModal')">Learn More</button>
+                    </div>
+
+                    <div class="membership-card">
+                        <h3>Silver</h3>
+                        <div class="price">$400/year</div>
+                        <p>Enhanced benefits for growing companies</p>
+                        <button class="learn-more-btn" onclick="openModal('silverModal')">Learn More</button>
+                    </div>
+
+                    <div class="membership-card">
+                        <h3>Gold</h3>
+                        <div class="price">$750/year</div>
+                        <p>Premium membership with maximum benefits</p>
+                        <button class="learn-more-btn" onclick="openModal('goldModal')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <div id="npModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('npModal')">&times;</span>
+                <h2>NP Membership Benefits</h2>
+                <ul class="benefits-list">
+                    <li>Free membership for qualified non-profits</li>
+                    <li>Access to networking events</li>
+                    <li>Monthly newsletter</li>
+                    <li>Business directory listing</li>
+                    <li>Community event announcements</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="bronzeModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('bronzeModal')">&times;</span>
+                <h2>Bronze Membership Benefits</h2>
+                <ul class="benefits-list">
+                    <li>All NP Membership benefits</li>
+                    <li>Quarterly business training workshops</li>
+                    <li>20% discount on chamber events</li>
+                    <li>Social media promotion opportunities</li>
+                    <li>Member referral program</li>
+                    <li>Access to member directory</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="silverModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('silverModal')">&times;</span>
+                <h2>Silver Membership Benefits</h2>
+                <ul class="benefits-list">
+                    <li>All Bronze Membership benefits</li>
+                    <li>Featured business spotlight on website</li>
+                    <li>40% discount on chamber events</li>
+                    <li>Monthly featured social media posts</li>
+                    <li>Priority event registration</li>
+                    <li>Exclusive member-only networking events</li>
+                    <li>Business development consultations</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="goldModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('goldModal')">&times;</span>
+                <h2>Gold Membership Benefits</h2>
+                <ul class="benefits-list">
+                    <li>All Silver Membership benefits</li>
+                    <li>Premium website banner advertising</li>
+                    <li>50% discount on all chamber events</li>
+                    <li>Weekly featured social media promotion</li>
+                    <li>Exclusive VIP networking events</li>
+                    <li>One-on-one business mentoring sessions</li>
+                    <li>Speaking opportunities at chamber events</li>
+                    <li>Priority consideration for partnership opportunities</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="chamber-info">
+                    <strong>Teandu Chamber of Commerce</strong><br>
+                    10 Rue De La Paix<br>
+                    Teandu, Ghana 999<br>
+                    info@tenaduchamber.org<br>
+                    +233 30 123 4567
+                </div>
+            </div>
+            
+            <div class="footer-center">
+                <div class="social-icons">
+                    <a href="#" aria-label="YouTube" class="social-icon youtube">
+                        <span class="icon">▶</span>
+                    </a>
+                    <a href="#" aria-label="Twitter" class="social-icon twitter">
+                        <span class="icon">𝕏</span>
+                    </a>
+                    <a href="#" aria-label="LinkedIn" class="social-icon linkedin">
+                        <span class="icon">in</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-right">
+                <div class="project-info">
+                    <strong>WDD231 Class Project</strong><br>
+                    Alliana O. Tenadu<br>
+                    &copy; <span id="year"></span> Teandu Chamber of Commerce<br>
+                    <span id="lastModified"></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js" defer></script>
+</body>
+</html>
