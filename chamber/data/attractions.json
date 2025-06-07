@@ -1,0 +1,68 @@
+{
+  "attractions": [
+    {
+      "id": 1,
+      "name": "Teandu Cultural Center",
+      "address": "15 Heritage Boulevard, Teandu, Greater Accra",
+      "description": "A vibrant cultural hub showcasing traditional Ghanaian arts, crafts, and performances. Features rotating exhibitions of local artists, traditional drumming and dance performances, and workshops on Ghanaian cultural practices. The center also houses a museum dedicated to the history and heritage of the Greater Accra region.",
+      "image": "images/cultural-center.jpg",
+      "category": "Cultural"
+    },
+    {
+      "id": 2,
+      "name": "Volta River Scenic Overlook",
+      "address": "Riverside Drive, Teandu, Greater Accra",
+      "description": "Breathtaking panoramic views of the Volta River and surrounding landscape. Perfect for photography, peaceful walks, and sunset viewing. The overlook features benches, walking trails, and an information center about local wildlife and river ecology. Popular spot for both locals and tourists seeking natural beauty.",
+      "image": "images/volta-overlook.jpg",
+      "category": "Nature"
+    },
+    {
+      "id": 3,
+      "name": "Golden Kente Textile Market",
+      "address": "22 Market Square, Teandu, Greater Accra",
+      "description": "Traditional marketplace specializing in authentic Kente cloth and other Ghanaian textiles. Local weavers demonstrate their craft and sell handmade fabrics, clothing, and accessories. Experience the vibrant colors and intricate patterns of Ghana's most famous textile tradition while supporting local artisans.",
+      "image": "images/kente-market.jpg",
+      "category": "Shopping"
+    },
+    {
+      "id": 4,
+      "name": "Baobab Gardens Restaurant",
+      "address": "8 Palm Tree Lane, Teandu, Greater Accra",
+      "description": "Award-winning restaurant serving authentic Ghanaian cuisine in a beautiful garden setting. Features traditional dishes like jollof rice, banku, and grilled tilapia. The restaurant's outdoor seating area is surrounded by lush tropical plants and provides a peaceful dining experience under the shade of ancient baobab trees.",
+      "image": "images/baobab-restaurant.jpg",
+      "category": "Dining"
+    },
+    {
+      "id": 5,
+      "name": "Teandu Sports Complex",
+      "address": "45 Athletic Road, Teandu, Greater Accra",
+      "description": "Modern sports facility offering football fields, basketball courts, and a swimming pool. Hosts local tournaments and community sports events. Features a fitness center, sports equipment rental, and coaching programs for youth. A hub for athletic activities and community gatherings in Teandu.",
+      "image": "images/sports-complex.jpg",
+      "category": "Recreation"
+    },
+    {
+      "id": 6,
+      "name": "Sacred Grove Nature Reserve",
+      "address": "Nature Trail Road, Teandu, Greater Accra",
+      "description": "Protected forest area home to diverse wildlife and medicinal plants. Features guided nature walks, bird watching opportunities, and educational programs about local ecosystem conservation. The grove is considered sacred by local communities and offers a peaceful retreat into Ghana's natural heritage.",
+      "image": "images/sacred-grove.jpg",
+      "category": "Nature"
+    },
+    {
+      "id": 7,
+      "name": "Tenadu Community Learning Center",
+      "address": "12 Education Street, Teandu, Greater Accra",
+      "description": "Modern educational facility offering computer literacy, vocational training, and adult education programs. Features a library, computer lab, and meeting spaces for community events. Provides essential educational services and digital skills training to support local economic development and personal growth.",
+      "image": "images/learning-center.jpg",
+      "category": "Education"
+    },
+    {
+      "id": 8,
+      "name": "Sunset Beach Resort",
+      "address": "Ocean View Drive, Teandu, Greater Accra",
+      "description": "Beautiful beachfront resort offering accommodations, dining, and water sports activities. Features traditional fishing boat excursions, beach volleyball courts, and cultural entertainment. The resort supports local fishing communities and provides a gateway to experience Ghana's stunning coastline and maritime culture.",
+      "image": "images/sunset-beach.jpg",
+      "category": "Tourism"
+    }
+  ]
+}
