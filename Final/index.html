@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Ghana's rich culture, stunning destinations, and delicious cuisine. Your complete guide to experiencing the heart of West Africa.">
+    <meta name="author" content="Your Name">
+    <meta name="keywords" content="Ghana travel, West Africa tourism, Ghana destinations, Ghanaian culture">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Experience Ghana - Your Ultimate Travel Guide">
+    <meta property="og:description" content="Discover Ghana's rich culture, stunning destinations, and delicious cuisine.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/wdd231/final/">
+    <meta property="og:image" content="images/ghana-hero.jpg">
+    
+    <title>Experience Ghana - Your Ultimate Travel Guide</title>
+    <link rel="icon" type="image/x-icon" href="./images/ghana-flag.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css"/>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="./images/ghana-flag.png" alt="Ghana Flag" class="logo-icon">
+                <span class="logo-text">Experience Ghana</span>
+            </div>
+            <nav class="main-nav">
+                <button class="hamburger" id="hamburger" aria-label="Menu toggle">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="explore.html" class="nav-link">Explore</a></li>
+                    <li><a href="taste.html" class="nav-link">Taste</a></li>
+                    <li><a href="travel-tips.html" class="nav-link">Travel Tips</a></li>
+                   <li><a href="attributions.html" class="nav-link">Attributions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Discover the Heart of West Africa</h1>
+                <p>Experience Ghana's rich culture, breathtaking landscapes, and warm hospitality. From historic castles to vibrant markets, your African adventure awaits.</p>
+                <button class="cta-button" id="explore-btn">Start Exploring</button>
+            </div>
+            <div class="hero-image">
+                <img src="./images/ghana-hero.jpg" alt="Beautiful Ghana landscape with traditional architecture" loading="eager">
+            </div>
+        </section>
+
+        <!-- Quick Navigation Cards -->
+        <section class="quick-nav">
+            <div class="container">
+                <h2>What Will You Discover?</h2>
+                <div class="nav-cards">
+                    <div class="nav-card" data-section="explore">
+                        <img src="./images/destinations-icon.jpg" alt="Ghana destinations" loading="lazy">
+                        <h3>Explore Ghana</h3>
+                        <p>Discover historic castles, national parks, and cultural landmarks across the country.</p>
+                        <a href="explore.html" class="card-link">View Destinations</a>
+                    </div>
+                    <div class="nav-card" data-section="taste">
+                        <img src="images/food-icon.jpg" alt="Ghanaian cuisine" loading="lazy">
+                        <h3>Taste Ghana</h3>
+                        <p>Savor traditional dishes and discover the flavors that make Ghanaian cuisine unique.</p>
+                        <a href="taste.html" class="card-link">Explore Food</a>
+                    </div>
+                    <div class="nav-card" data-section="tips">
+                        <img src="images/tips-icon.jpg" alt="Travel tips" loading="lazy">
+                        <h3>Travel Tips</h3>
+                        <p>Get practical advice on transportation, culture, and making the most of your visit.</p>
+                        <a href="travel-tips.html" class="card-link">Get Tips</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Destinations Preview -->
+        <section class="featured-preview">
+            <div class="container">
+                <h2>Featured Destinations</h2>
+                <div class="destinations-preview" id="destinations-preview">
+                    <!-- Content will be dynamically loaded -->
+                </div>
+                <button class="see-more-btn" onclick="window.location.href='explore.html'">See All Destinations</button>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Stay Updated on Ghana Travel</h2>
+                    <p>Get the latest travel tips, destination guides, and cultural insights delivered to your inbox.</p>
+                    <form action="form-action.html" method="get" class="newsletter-form" id="newsletter-form">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="interests">Travel Interests</label>
+                            <input type="text" id="interests" name="interests" placeholder="Culture, History, Food, Adventure...">
+                        </div>
+                        <div class="form-group">
+                            <label for="frequency">Newsletter Frequency</label>
+                            <select id="frequency" name="frequency" required>
+                                <option value="">Choose frequency</option>
+                                <option value="weekly">Weekly Updates</option>
+                                <option value="monthly">Monthly Newsletter</option>
+                                <option value="quarterly">Quarterly Highlights</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="submit-btn">Subscribe Now</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for destination details -->
+    <div id="destination-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Destination Details</h2>
+                <button class="close-modal" id="close-modal" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Content will be dynamically inserted -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Experience Ghana</h3>
+                    <p>Your gateway to discovering West Africa's cultural heart.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="explore.html">Destinations</a></li>
+                        <li><a href="taste.html">Food & Culture</a></li>
+                        <li><a href="travel-tips.html">Travel Tips</a></li>
+                        <li><a href="attributions.html">Attributions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#" id="video-link">Project Video</a></li>
+                        <li><a href="mailto:contact@experienceghana.com">Contact Us</a></li>
+                        <li><a href="#" target="_blank">Ghana Tourism Authority</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Experience Ghana. Educational project for WDD 231.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Modules -->
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>

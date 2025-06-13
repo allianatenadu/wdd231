@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Essential travel tips for Ghana - transportation, safety, culture, currency, weather, and practical advice for an amazing Ghana adventure.">
+    <meta name="author" content="Your Name">
+    <meta name="keywords" content="Ghana travel tips, Ghana travel guide, Ghana safety, Ghana culture, Ghana transportation, Ghana travel advice">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Ghana Travel Tips - Essential Guide for Visitors">
+    <meta property="og:description" content="Complete travel guide with practical tips for visiting Ghana safely and respectfully.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/wdd231/final/travel-tips.html">
+    <meta property="og:image" content="images/ghana-travel-tips.jpg">
+    
+    <title>Ghana Travel Tips - Essential Guide for Visitors</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        /* Additional styles for travel tips page */
+        .tips-hero {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-gold) 100%);
+            color: var(--warm-white);
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .tips-hero::before {
+            content: '✈️';
+            position: absolute;
+            font-size: 12rem;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .tips-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .tips-title {
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-md);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tips-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .quick-tips {
+            padding: var(--spacing-lg) 0;
+            background-color: var(--light-green);
+        }
+        
+        .quick-tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .quick-tip {
+            background-color: var(--warm-white);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .quick-tip-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .quick-tip-title {
+            color: var(--primary-green);
+            font-weight: bold;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .quick-tip-text {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+        
+        .tips-section {
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .tips-section:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: var(--spacing-xl);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-gold);
+            margin: var(--spacing-md) auto 0;
+            border-radius: 2px;
+        }
+        
+        .tips-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .tip-category {
+            background-color: var(--warm-white);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid var(--primary-red);
+        }
+        
+        .tip-category-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+        }
+        
+        .tip-category-title {
+            color: var(--primary-green);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+        }
+        
+        .tip-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .tip-item {
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px solid var(--border-gray);
+            position: relative;
+            padding-left: var(--spacing-lg);
+        }
+        
+        .tip-item:last-child {
+            border-bottom: none;
+        }
+        
+        .tip-item::before {
+            content: '💡';
+            position: absolute;
+            left: 0;
+            top: var(--spacing-sm);
+        }
+        
+        .cultural-etiquette {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-gold) 100%);
+            color: var(--warm-white);
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .etiquette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .etiquette-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .etiquette-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+        }
+        
+        .etiquette-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+        }
+        
+        .etiquette-content {
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+        
+        .emergency-info {
+            background-color: var(--primary-red);
+            color: var(--warm-white);
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .emergency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .emergency-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+        
+        .emergency-title {
+            font-weight: bold;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .emergency-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-gold);
+        }
+        
+        .packing-checklist {
+            padding: var(--spacing-xl) 0;
+            background-color: var(--light-gray);
+        }
+        
+        .checklist-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .checklist-category {
+            background-color: var(--warm-white);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .checklist-title {
+            color: var(--primary-green);
+            font-weight: bold;
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist-item {
+            padding: var(--spacing-xs) 0;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .checklist-item input[type="checkbox"] {
+            transform: scale(1.2);
+            accent-color: var(--primary-green);
+        }
+        
+        .interactive-calculator {
+            padding: var(--spacing-xl) 0;
+            background-color: var(--warm-white);
+        }
+        
+        .calculator-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--light-green);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .calculator-title {
+            color: var(--primary-green);
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .calculator-form {
+            display: grid;
+            gap: var(--spacing-md);
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
+        }
+        
+        .form-label {
+            font-weight: bold;
+            color: var(--dark-gray);
+        }
+        
+        .form-input {
+            padding: var(--spacing-sm);
+            border: 2px solid var(--border-gray);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+        
+        .calculate-btn {
+            background-color: var(--primary-green);
+            color: var(--warm-white);
+            border: none;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .calculate-btn:hover {
+            background-color: var(--dark-green);
+        }
+        
+        .result-display {
+            background-color: var(--warm-white);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            margin-top: var(--spacing-md);
+            text-align: center;
+            display: none;
+        }
+        
+        .result-amount {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-green);
+        }
+        
+        @media (max-width: 768px) {
+            .tips-title {
+                font-size: 2.5rem;
+            }
+            
+            .tips-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .quick-tips-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/ghana-flag-icon.png" alt="Ghana Flag" class="logo-icon">
+                <span class="logo-text">Experience Ghana</span>
+            </div>
+            <nav class="main-nav">
+                <button class="hamburger" id="hamburger" aria-label="Menu toggle">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="explore.html" class="nav-link">Explore</a></li>
+                    <li><a href="taste.html" class="nav-link">Taste</a></li>
+                    <li><a href="travel-tips.html" class="nav-link active">Travel Tips</a></li>
+                   <li><a href="attributions.html" class="nav-link">Attributions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="tips-hero">
+            <div class="container">
+                <div class="tips-hero-content">
+                    <h1 class="tips-title">Ghana Travel Tips</h1>
+                    <p class="tips-subtitle">
+                        Essential advice and practical information to help you have an amazing, 
+                        safe, and culturally enriching experience in Ghana.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Tips -->
+        <div class="quick-tips">
+            <div class="container">
+                <div class="quick-tips-grid">
+                    <div class="quick-tip">
+                        <div class="quick-tip-icon">🛂</div>
+                        <div class="quick-tip-title">Visa Required</div>
+                        <div class="quick-tip-text">Most visitors need a visa. Apply online or at embassy.</div>
+                    </div>
+                    <div class="quick-tip">
+                        <div class="quick-tip-icon">💱</div>
+                        <div class="quick-tip-title">Currency: Ghana Cedi</div>
+                        <div class="quick-tip-text">Use mobile money or cash. Cards accepted in major cities.</div>
+                    </div>
+                    <div class="quick-tip">
+                        <div class="quick-tip-icon">🌡️</div>
+                        <div class="quick-tip-title">Tropical Climate</div>
+                        <div class="quick-tip-text">Hot and humid. Dry season: Nov-Mar. Rainy season: Apr-Oct.</div>
+                    </div>
+                    <div class="quick-tip">
+                        <div class="quick-tip-icon">🗣️</div>
+                        <div class="quick-tip-title">Language: English</div>
+                        <div class="quick-tip-text">Official language. 70+ local languages also spoken.</div>
+                    </div>
+                    <div class="quick-tip">
+                        <div class="quick-tip-icon">💉</div>
+                        <div class="quick-tip-title">Health Precautions</div>
+                        <div class="quick-tip-text">Yellow fever vaccination required. Malaria prophylaxis recommended.</div>
+                    </div>
+                    <div class="quick-tip">
+                        <div class="quick-tip-icon">🔌</div>
+                        <div class="quick-tip-title">Electricity: 230V</div>
+                        <div class="quick-tip-text">Type D and G plugs. Bring universal adapter.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transportation Tips -->
+        <section class="tips-section">
+            <div class="container">
+                <h2 class="section-title">Transportation & Getting Around</h2>
+                <div class="tips-container">
+                    <div class="tip-category">
+                        <div class="tip-category-icon">🚌</div>
+                        <h3 class="tip-category-title">Public Transportation</h3>
+                        <ul class="tip-list">
+                            <li class="tip-item">Tro-tros (shared minibuses) are cheapest but can be crowded</li>
+                            <li class="tip-item">STC and other bus companies for long-distance travel</li>
+                            <li class="tip-item">Always negotiate tro-tro fares before boarding</li>
+                            <li class="tip-item">Metro Mass Transit buses are government-run and reliable</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tip-category">
+                        <div class="tip-category-icon">🚗</div>
+                        <h3 class="tip-category-title">Taxis & Ride Sharing</h3>
+                        <ul class="tip-list">
+                            <li class="tip-item">Uber and Bolt operate in major cities</li>
+                            <li class="tip-item">Always negotiate taxi fares beforehand</li>
+                            <li class="tip-item">Shared taxis are common and economical</li>
+                            <li class="tip-item">Private taxis are safer for late-night travel</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tip-category">
+                        <div class="tip-category-icon">✈️</div>
+                        <h3 class="tip-category-title">Domestic Flights</h3>
+                        <ul class="tip-list">
+                            <li class="tip-item">Passion Air and Africa World Airlines for domestic routes</li>
+                            <li class="tip-item">Book flights in advance for better prices</li>
+                            <li class="tip-item">Kumasi, Tamale, and Takoradi have airports</li>
+                            <li class="tip-item">Consider flights for long northern trips</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cultural Etiquette -->
+        <section class="cultural-etiquette">
+            <div class="container">
+                <h2 class="section-title" style="color: var(--warm-white);">Cultural Etiquette & Customs</h2>
+                <div class="etiquette-grid">
+                    <div class="etiquette-card">
+                        <div class="etiquette-icon">🤝</div>
+                        <h3 class="etiquette-title">Greetings</h3>
+                        <p class="etiquette-content">
+                            Always greet people before asking questions. Use your right hand for handshakes. 
+                            Show respect to elders by greeting them first.
+                        </p>
+                    </div>
+                    
+                    <div class="etiquette-card">
+                        <div class="etiquette-icon">👗</div>
+                        <h3 class="etiquette-title">Dress Code</h3>
+                        <p class="etiquette-content">
+                            Dress modestly, especially in rural areas and religious sites. 
+                            Cover shoulders and knees. Light, breathable fabrics work best.
+                        </p>
+                    </div>
+                    
+                    <div class="etiquette-card">
+                        <div class="etiquette-icon">🍽️</div>
+                        <h3 class="etiquette-title">Dining Etiquette</h3>
+                        <p class="etiquette-content">
+                            Wash hands before eating. Use your right hand for eating. 
+                            Wait for elders to start eating before you begin.
+                        </p>
+                    </div>
+                    
+                    <div class="etiquette-card">
+                        <div class="etiquette-icon">📷</div>
+                        <h3 class="etiquette-title">Photography</h3>
+                        <p class="etiquette-content">
+                            Always ask permission before photographing people. 
+                            Some may expect a small tip. Avoid photos of military/government buildings.
+                        </p>
+                    </div>
+                    
+                    <div class="etiquette-card">
+                        <div class="etiquette-icon">🎁</div>
+                        <h3 class="etiquette-title">Gift Giving</h3>
+                        <p class="etiquette-content">
+                            Bring small gifts when visiting homes. Present and receive gifts with both hands. 
+                            Gifts from your home country are especially appreciated.
+                        </p>
+                    </div>
+                    
+                    <div class="etiquette-card">
+                        <div class="etiquette-icon">🛐</div>
+                        <h3 class="etiquette-title">Religious Respect</h3>
+                        <p class="etiquette-content">
+                            Ghana is religious - respect all faiths. Dress appropriately for religious sites. 
+                            Remove shoes when entering mosques.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety & Health -->
+        <section class="tips-section">
+            <div class="container">
+                <h2 class="section-title">Safety & Health</h2>
+                <div class="tips-container">
+                    <div class="tip-category">
+                        <div class="tip-category-icon">🏥</div>
+                        <h3 class="tip-category-title">Health Precautions</h3>
+                        <ul class="tip-list">
+                            <li class="tip-item">Get yellow fever vaccination (required for entry)</li>
+                            <li class="tip-item">Take malaria prophylaxis and use mosquito repellent</li>
+                            <li class="tip-item">Drink bottled or purified water</li>
+                            <li class="tip-item">Eat at busy restaurants with high turnover</li>
+                            <li class="tip-item">Bring basic first aid kit and medications</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tip-category">
+                        <div class="tip-category-icon">🔒</div>
+                        <h3 class="tip-category-title">Personal Safety</h3>
+                        <ul class="tip-list">
+                            <li class="tip-item">Don't display expensive jewelry or electronics</li>
+                            <li class="tip-item">Use hotel safes for valuables</li>
+                            <li class="tip-item">Avoid walking alone at night</li>
+                            <li class="tip-item">Stay in groups when possible</li>
+                            <li class="tip-item">Keep copies of important documents</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tip-category">
+                        <div class="tip-category-icon">💰</div>
+                        <h3 class="tip-category-title">Money Safety</h3>
+                        <ul class="tip-list">
+                            <li class="tip-item">Use ATMs inside banks or malls</li>
+                            <li class="tip-item">Carry cash in multiple small amounts</li>
+                            <li class="tip-item">Notify your bank about travel plans</li>
+                            <li class="tip-item">Use mobile money (MoMo) for convenience</li>
+                            <li class="tip-item">Bargain respectfully at markets</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Information -->
+        <section class="emergency-info">
+            <div class="container">
+                <h2 class="section-title" style="color: var(--warm-white);">Emergency Contacts</h2>
+                <div class="emergency-grid">
+                    <div class="emergency-card">
+                        <div class="emergency-title">Police Emergency</div>
+                        <div class="emergency-number">191</div>
+                    </div>
+                    <div class="emergency-card">
+                        <div class="emergency-title">Fire Service</div>
+                        <div class="emergency-number">192</div>
+                    </div>
+                    <div class="emergency-card">
+                        <div class="emergency-title">Ambulance</div>
+                        <div class="emergency-number">193</div>
+                    </div>
+                    <div class="emergency-card">
+                        <div class="emergency-title">Tourist Helpline</div>
+                        <div class="emergency-number">0302-222-153</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Packing Checklist -->
+        <section class="packing-checklist">
+            <div class="container">
+                <h2 class="section-title">Interactive Packing Checklist</h2>
+                <div class="checklist-categories" id="packing-lists">
+                    <!-- Content will be dynamically loaded -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Budget Calculator -->
+        <section class="interactive-calculator">
+            <div class="container">
+                <div class="calculator-container">
+                    <h2 class="calculator-title">💰 Daily Budget Calculator</h2>
+                    <form class="calculator-form" id="budget-calculator">
+                        <div class="form-group">
+                            <label for="trip-duration" class="form-label">Trip Duration (days):</label>
+                            <input type="number" id="trip-duration" class="form-input" min="1" max="365" value="7">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="accommodation-type" class="form-label">Accommodation Type:</label>
+                            <select id="accommodation-type" class="form-input">
+                                <option value="budget">Budget (Hostels, Guesthouses) - $15-25/night</option>
+                                <option value="mid-range">Mid-range (Hotels) - $40-80/night</option>
+                                <option value="luxury">Luxury (5-star Hotels) - $120+/night</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="meal-preference" class="form-label">Meal Preference:</label>
+                            <select id="meal-preference" class="form-input">
+                                <option value="local">Local Food (Street food, local restaurants) - $5-10/day</option>
+                                <option value="mixed">Mixed (Local + International) - $15-25/day</option>
+                                <option value="upscale">Upscale Dining (Hotels, fine restaurants) - $30-50/day</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="activity-level" class="form-label">Activity Level:</label>
+                            <select id="activity-level" class="form-input">
+                                <option value="low">Low (Basic sightseeing) - $10-20/day</option>
+                                <option value="moderate">Moderate (Tours, attractions) - $25-40/day</option>
+                                <option value="high">High (Adventure tours, multiple activities) - $50-80/day</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="calculate-btn">Calculate Budget</button>
+                    </form>
+                    
+                    <div class="result-display" id="budget-result">
+                        <h3>Estimated Budget</h3>
+                        <div class="result-amount" id="total-budget">$0</div>
+                        <p>Total for your <span id="result-days">0</span>-day trip</p>
+                        <p>Daily average: $<span id="daily-average">0</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Experience Ghana</h3>
+                    <p>Your gateway to discovering West Africa's cultural heart.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="explore.html">Destinations</a></li>
+                        <li><a href="taste.html">Food & Culture</a></li>
+                        <li><a href="travel-tips.html">Travel Tips</a></li>
+                        <li><a href="attributions.html">Attributions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#" id="video-link">Project Video</a></li>
+                        <li><a href="mailto:contact@experienceghana.com">Contact Us</a></li>
+                        <li><a href="#" target="_blank">Ghana Tourism Authority</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Experience Ghana. Educational project for WDD 231.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        // Travel Tips page JavaScript
+        import { toggleMobileMenu } from './js/modules/ui.js';
+        import { saveUserPreference, getUserPreference } from './js/modules/storage.js';
+
+        // Packing checklist data - demonstrates array methods and data handling
+        const packingCategories = [
+            {
+                id: 1,
+                title: "🎒 Essential Documents",
+                icon: "📄",
+                items: [
+                    "Passport (valid for 6+ months)",
+                    "Ghana visa",
+                    "Yellow fever vaccination certificate",
+                    "Travel insurance documents",
+                    "Flight tickets",
+                    "Hotel confirmations",
+                    "Emergency contact information",
+                    "Copies of all documents"
+                ]
+            },
+            {
+                id: 2,
+                title: "👕 Clothing & Accessories",
+                icon: "👔",
+                items: [
+                    "Light, breathable shirts",
+                    "Long pants for evenings/mosquitoes",
+                    "Modest dress for religious sites",
+                    "Comfortable walking shoes",
+                    "Sandals for beach/casual wear",
+                    "Hat for sun protection",
+                    "Light rain jacket",
+                    "Swimwear"
+                ]
+            },
+            {
+                id: 3,
+                title: "🏥 Health & Safety",
+                icon: "💊",
+                items: [
+                    "Malaria prophylaxis medication",
+                    "Insect repellent (DEET)",
+                    "Sunscreen (SPF 30+)",
+                    "Basic first aid kit",
+                    "Personal medications",
+                    "Hand sanitizer",
+                    "Water purification tablets",
+                    "Thermometer"
+                ]
+            },
+            {
+                id: 4,
+                title: "🔌 Electronics & Gadgets",
+                icon: "📱",
+                items: [
+                    "Universal power adapter",
+                    "Portable phone charger",
+                    "Camera with extra batteries",
+                    "Headphones",
+                    "Flashlight or headlamp",
+                    "Power bank",
+                    "Voltage converter if needed",
+                    "Waterproof phone case"
+                ]
+            },
+            {
+                id: 5,
+                title: "💰 Money & Cards",
+                icon: "💳",
+                items: [
+                    "US Dollars (for exchange)",
+                    "Credit/debit cards",
+                    "Backup credit card",
+                    "Small bills for tips",
+                    "Money belt or hidden wallet",
+                    "Bank contact information",
+                    "Travel insurance card",
+                    "Emergency cash stash"
+                ]
+            },
+            {
+                id: 6,
+                title: "🧳 Miscellaneous",
+                icon: "🔧",
+                items: [
+                    "Travel guidebook",
+                    "Notebook and pen",
+                    "Reusable water bottle",
+                    "Wet wipes",
+                    "Tissues",
+                    "Plastic bags for wet clothes",
+                    "Travel pillow",
+                    "Entertainment for flights"
+                ]
+            }
+        ];
+
+        // Budget calculation constants
+        const budgetRanges = {
+            accommodation: {
+                budget: { min: 15, max: 25 },
+                'mid-range': { min: 40, max: 80 },
+                luxury: { min: 120, max: 200 }
+            },
+            meals: {
+                local: { min: 5, max: 10 },
+                mixed: { min: 15, max: 25 },
+                upscale: { min: 30, max: 50 }
+            },
+            activities: {
+                low: { min: 10, max: 20 },
+                moderate: { min: 25, max: 40 },
+                high: { min: 50, max: 80 }
+            }
+        };
+
+        // Initialize page when DOM loads
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeTravelTipsPage();
+            setupEventListeners();
+        });
+
+        /**
+         * Initialize the travel tips page
+         * Demonstrates array methods and dynamic content generation
+         */
+        function initializeTravelTipsPage() {
+            try {
+                displayPackingChecklists();
+                loadPackingProgress();
+                trackPageVisit();
+                console.log('Travel tips page initialized successfully');
+            } catch (error) {
+                console.error('Error initializing travel tips page:', error);
+            }
+        }
+
+        /**
+         * Display packing checklists using array methods and template literals
+         * Demonstrates DOM manipulation and data rendering
+         */
+        function displayPackingChecklists() {
+            const container = document.getElementById('packing-lists');
+            
+            if (!container) {
+                console.error('Packing lists container not found');
+                return;
+            }
+
+            // Use template literals to create checklist categories
+            container.innerHTML = packingCategories.map(category => `
+                <div class="checklist-category">
+                    <h3 class="checklist-title">
+                        <span>${category.icon}</span>
+                        ${category.title}
+                    </h3>
+                    <ul class="checklist">
+                        ${category.items.map((item, index) => `
+                            <li class="checklist-item">
+                                <input type="checkbox" 
+                                       id="item-${category.id}-${index}" 
+                                       data-category="${category.id}" 
+                                       data-item="${index}"
+                                       onchange="updatePackingProgress(this)">
+                                <label for="item-${category.id}-${index}">${item}</label>
+                            </li>
+                        `).join('')}
+                    </ul>
+                    <div class="progress-info">
+                        <small>Progress: <span id="progress-${category.id}">0</span>/${category.items.length} items</small>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        /**
+         * Setup event listeners
+         * Demonstrates event handling and form processing
+         */
+        function setupEventListeners() {
+            // Mobile menu toggle
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    toggleMobileMenu(navMenu);
+                });
+            }
+
+            // Budget calculator form
+            const budgetForm = document.getElementById('budget-calculator');
+            if (budgetForm) {
+                budgetForm.addEventListener('submit', handleBudgetCalculation);
+            }
+        }
+
+        /**
+         * Handle budget calculation
+         * Demonstrates form processing and mathematical calculations
+         */
+        function handleBudgetCalculation(e) {
+            e.preventDefault();
+            
+            try {
+                // Get form values
+                const duration = parseInt(document.getElementById('trip-duration').value);
+                const accommodationType = document.getElementById('accommodation-type').value;
+                const mealPreference = document.getElementById('meal-preference').value;
+                const activityLevel = document.getElementById('activity-level').value;
+                
+                // Calculate budget using object lookups and array methods
+                const accommodationCost = calculateCategoryBudget(budgetRanges.accommodation[accommodationType], duration);
+                const mealCost = calculateCategoryBudget(budgetRanges.meals[mealPreference], duration);
+                const activityCost = calculateCategoryBudget(budgetRanges.activities[activityLevel], duration);
+                
+                // Add miscellaneous costs (transport, souvenirs, etc.)
+                const miscCost = duration * 15; // $15/day for misc expenses
+                
+                const totalBudget = accommodationCost + mealCost + activityCost + miscCost;
+                const dailyAverage = Math.round(totalBudget / duration);
+                
+                // Display results
+                displayBudgetResults(totalBudget, duration, dailyAverage);
+                
+                // Save calculation preferences
+                saveBudgetPreferences({
+                    duration,
+                    accommodationType,
+                    mealPreference,
+                    activityLevel,
+                    calculatedBudget: totalBudget,
+                    calculatedAt: new Date().toISOString()
+                });
+                
+            } catch (error) {
+                console.error('Error calculating budget:', error);
+                alert('Error calculating budget. Please check your inputs and try again.');
+            }
+        }
+
+        /**
+         * Calculate budget for a category
+         * Demonstrates mathematical operations
+         */
+        function calculateCategoryBudget(range, duration) {
+            // Use average of min and max for calculation
+            const average = (range.min + range.max) / 2;
+            return Math.round(average * duration);
+        }
+
+        /**
+         * Display budget calculation results
+         * Demonstrates DOM manipulation and template literals
+         */
+        function displayBudgetResults(total, days, daily) {
+            const resultDisplay = document.getElementById('budget-result');
+            const totalBudgetEl = document.getElementById('total-budget');
+            const resultDaysEl = document.getElementById('result-days');
+            const dailyAverageEl = document.getElementById('daily-average');
+            
+            if (resultDisplay && totalBudgetEl && resultDaysEl && dailyAverageEl) {
+                totalBudgetEl.textContent = `${total.toLocaleString()}`;
+                resultDaysEl.textContent = days;
+                dailyAverageEl.textContent = daily;
+                
+                resultDisplay.style.display = 'block';
+                
+                // Smooth scroll to results
+                resultDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        /**
+         * Update packing progress (global function for checkbox onchange)
+         * Demonstrates localStorage usage and array methods
+         */
+        window.updatePackingProgress = function(checkbox) {
+            const categoryId = parseInt(checkbox.dataset.category);
+            const itemIndex = parseInt(checkbox.dataset.item);
+            
+            // Get current progress from localStorage
+            const progress = getUserPreference('packingProgress', {});
+            
+            // Initialize category if not exists
+            if (!progress[categoryId]) {
+                progress[categoryId] = [];
+            }
+            
+            // Update item status using array methods
+            if (checkbox.checked) {
+                if (!progress[categoryId].includes(itemIndex)) {
+                    progress[categoryId].push(itemIndex);
+                }
+            } else {
+                progress[categoryId] = progress[categoryId].filter(index => index !== itemIndex);
+            }
+            
+            // Save updated progress
+            saveUserPreference('packingProgress', progress);
+            
+            // Update progress display
+            updateProgressDisplay(categoryId);
+        };
+
+        /**
+         * Update progress display for a category
+         * Demonstrates array methods and DOM manipulation
+         */
+        function updateProgressDisplay(categoryId) {
+            const progress = getUserPreference('packingProgress', {});
+            const categoryProgress = progress[categoryId] || [];
+            const category = packingCategories.find(cat => cat.id === categoryId);
+            
+            if (category) {
+                const progressEl = document.getElementById(`progress-${categoryId}`);
+                if (progressEl) {
+                    progressEl.textContent = categoryProgress.length;
+                }
+            }
+        }
+
+        /**
+         * Load packing progress from localStorage
+         * Demonstrates localStorage retrieval and DOM updates
+         */
+        function loadPackingProgress() {
+            const progress = getUserPreference('packingProgress', {});
+            
+            // Update checkboxes based on saved progress
+            Object.keys(progress).forEach(categoryId => {
+                const categoryProgress = progress[categoryId];
+                
+                categoryProgress.forEach(itemIndex => {
+                    const checkbox = document.getElementById(`item-${categoryId}-${itemIndex}`);
+                    if (checkbox) {
+                        checkbox.checked = true;
+                    }
+                });
+                
+                // Update progress display
+                updateProgressDisplay(parseInt(categoryId));
+            });
+        }
+
+        /**
+         * Save budget calculation preferences
+         * Demonstrates localStorage usage for user preferences
+         */
+        function saveBudgetPreferences(preferences) {
+            const calculations = getUserPreference('budgetCalculations', []);
+            calculations.push(preferences);
+            
+            // Keep only last 10 calculations
+            if (calculations.length > 10) {
+                calculations.splice(0, calculations.length - 10);
+            }
+            
+            saveUserPreference('budgetCalculations', calculations);
+            saveUserPreference('lastBudgetCalculation', preferences);
+        }
+
+        /**
+         * Track page visit and user engagement
+         * Demonstrates analytics tracking with localStorage
+         */
+        function trackPageVisit() {
+            const visitCount = getUserPreference('travelTipsPageVisits', 0);
+            saveUserPreference('travelTipsPageVisits', visitCount + 1);
+            saveUserPreference('lastTravelTipsVisit', new Date().toISOString());
+            
+            // Track user interests in travel planning
+            const interests = getUserPreference('userInterests', {});
+            interests.travelPlanning = (interests.travelPlanning || 0) + 1;
+            saveUserPreference('userInterests', interests);
+            
+            // Track which sections users engage with most
+            const sectionEngagement = getUserPreference('sectionEngagement', {});
+            sectionEngagement.travelTips = (sectionEngagement.travelTips || 0) + 1;
+            saveUserPreference('sectionEngagement', sectionEngagement);
+        }
+    </script>
+</body>
+</html>

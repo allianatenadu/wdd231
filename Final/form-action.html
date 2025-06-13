@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Newsletter subscription confirmation for Experience Ghana travel guide.">
+    <meta name="author" content="Your Name">
+    
+    <title>Newsletter Subscription Confirmed - Experience Ghana</title>
+    <link rel="icon" type="image/x-icon" href="images/ghana-flag.png">
+    <link rel="stylesheet" href="css/styles.css">
+      <link rel="stylesheet" href="css/responsive.css">
+    
+  
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/ghana-flag.png" alt="Ghana Flag" class="logo-icon">
+                <span class="logo-text">Experience Ghana</span>
+            </div>
+            <nav class="main-nav">
+                <button class="hamburger" id="hamburger" aria-label="Menu toggle">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="explore.html" class="nav-link">Explore</a></li>
+                    <li><a href="taste.html" class="nav-link">Taste</a></li>
+                    <li><a href="travel-tips.html" class="nav-link">Travel Tips</a></li>
+                   <li><a href="attributions.html" class="nav-link">Attributions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="confirmation-container">
+                <!-- Content will be populated by JavaScript based on URL parameters -->
+                <div id="confirmation-content">
+                    <!-- Default loading state -->
+                    <div class="confirmation-header">
+                        <div class="confirmation-icon">⏳</div>
+                        <h1 class="confirmation-title">Processing...</h1>
+                        <p class="confirmation-subtitle">Please wait while we confirm your subscription.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Experience Ghana</h3>
+                    <p>Your gateway to discovering West Africa's cultural heart.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="explore.html">Destinations</a></li>
+                        <li><a href="taste.html">Food & Culture</a></li>
+                        <li><a href="travel-tips.html">Travel Tips</a></li>
+                        <li><a href="attributions.html">Attributions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#" id="video-link">Project Video</a></li>
+                        <li><a href="mailto:contact@experienceghana.com">Contact Us</a></li>
+                        <li><a href="#" target="_blank">Ghana Tourism Authority</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Experience Ghana. Educational project for WDD 231.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        // Form action page JavaScript
+        // Demonstrates URL Search Params processing and dynamic content generation
+        
+        import { saveUserPreference, getUserPreference } from './js/modules/storage.js';
+        import { toggleMobileMenu } from './js/modules/ui.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            processFormData();
+            setupEventListeners();
+        });
+        
+        /**
+         * Process form data from URL parameters
+         * Demonstrates URLSearchParams usage and form data display
+         */
+        function processFormData() {
+            try {
+                // Get URL parameters
+                const urlParams = new URLSearchParams(window.location.search);
+                
+                // Extract form data
+                const formData = {
+                    email: urlParams.get('email'),
+                    interests: urlParams.get('interests'),
+                    frequency: urlParams.get('frequency'),
+                    timestamp: new Date().toISOString(),
+                    subscriptionId: generateSubscriptionId()
+                };
+                
+                // Validate required fields
+                if (!formData.email || !formData.frequency) {
+                    showErrorState('Missing required information. Please return to the form and try again.');
+                    return;
+                }
+                
+                // Validate email format
+                if (!isValidEmail(formData.email)) {
+                    showErrorState('Invalid email address format. Please return to the form and try again.');
+                    return;
+                }
+                
+                // Save subscription data to localStorage
+                saveSubscriptionData(formData);
+                
+                // Display confirmation
+                displayConfirmation(formData);
+                
+                // Track subscription analytics
+                trackSubscription(formData);
+                
+            } catch (error) {
+                console.error('Error processing form data:', error);
+                showErrorState('An error occurred while processing your subscription. Please try again.');
+            }
+        }
+        
+        /**
+         * Display confirmation content
+         * Demonstrates template literals and dynamic content generation
+         */
+        function displayConfirmation(formData) {
+            const container = document.getElementById('confirmation-content');
+            
+            // Create confirmation content using template literals
+            container.innerHTML = `
+                <div class="confirmation-header">
+                    <div class="confirmation-icon">🎉</div>
+                    <h1 class="confirmation-title">Subscription Confirmed!</h1>
+                    <p class="confirmation-subtitle">
+                        Thank you for subscribing to our Ghana travel newsletter.
+                    </p>
+                </div>
+                
+                <div class="subscription-details">
+                    <h3>📋 Subscription Details</h3>
+                    <div class="detail-row">
+                        <span class="detail-label">Email Address:</span>
+                        <span class="detail-value">${formData.email}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Newsletter Frequency:</span>
+                        <span class="detail-value">${capitalizeFirst(formData.frequency)}</span>
+                    </div>
+                    ${formData.interests ? `
+                    <div class="detail-row">
+                        <span class="detail-label">Travel Interests:</span>
+                        <span class="detail-value">${formData.interests}</span>
+                    </div>
+                    ` : ''}
+                    <div class="detail-row">
+                        <span class="detail-label">Subscription Date:</span>
+                        <span class="detail-value">${formatDate(formData.timestamp)}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Subscription ID:</span>
+                        <span class="detail-value">${formData.subscriptionId}</span>
+                    </div>
+                </div>
+                
+                <div class="next-steps">
+                    <h3>📬 What Happens Next?</h3>
+                    <ol class="steps-list">
+                        <li>Check your email inbox for a welcome message from Experience Ghana</li>
+                        <li>Add our email to your contacts to ensure delivery</li>
+                        <li>You'll receive your first ${formData.frequency} newsletter soon</li>
+                        <li>Each newsletter will feature new destinations, travel tips, and cultural insights</li>
+                        <li>You can update your preferences or unsubscribe at any time</li>
+                    </ol>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="index.html" class="action-button btn-primary">
+                        🏠 Return Home
+                    </a>
+                    <a href="explore.html" class="action-button btn-secondary">
+                        🔍 Explore Destinations
+                    </a>
+                    <button onclick="shareSubscription()" class="action-button btn-secondary">
+                        📱 Share
+                    </button>
+                </div>
+            `;
+        }
+        
+        /**
+         * Show error state
+         * Demonstrates error handling and user feedback
+         */
+        function showErrorState(message) {
+            const container = document.getElementById('confirmation-content');
+            
+            container.innerHTML = `
+                <div class="error-state">
+                    <div class="error-icon">❌</div>
+                    <h1>Subscription Error</h1>
+                    <p>${message}</p>
+                    <div class="action-buttons" style="margin-top: 2rem;">
+                        <a href="index.html#newsletter" class="action-button btn-primary">
+                            🔄 Try Again
+                        </a>
+                        <a href="index.html" class="action-button btn-secondary">
+                            🏠 Go Home
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+        
+        /**
+         * Save subscription data to localStorage
+         * Demonstrates data persistence
+         */
+        function saveSubscriptionData(formData) {
+            try {
+                // Save individual preferences
+                saveUserPreference('subscribedEmail', formData.email);
+                saveUserPreference('newsletterFrequency', formData.frequency);
+                saveUserPreference('travelInterests', formData.interests);
+                saveUserPreference('subscriptionDate', formData.timestamp);
+                saveUserPreference('subscriptionId', formData.subscriptionId);
+                saveUserPreference('isSubscribed', true);
+                
+                // Save complete subscription record
+                const subscriptions = getUserPreference('subscriptionHistory', []);
+                subscriptions.push(formData);
+                saveUserPreference('subscriptionHistory', subscriptions);
+                
+                console.log('Subscription data saved successfully');
+            } catch (error) {
+                console.error('Error saving subscription data:', error);
+            }
+        }
+        
+        /**
+         * Track subscription for analytics
+         * Demonstrates event tracking
+         */
+        function trackSubscription(formData) {
+            try {
+                // Track subscription metrics
+                const analytics = getUserPreference('analytics', {});
+                analytics.subscriptions = (analytics.subscriptions || 0) + 1;
+                analytics.lastSubscription = formData.timestamp;
+                
+                // Track interests
+                if (formData.interests) {
+                    const interests = formData.interests.split(',').map(i => i.trim().toLowerCase());
+                    analytics.interestTracking = analytics.interestTracking || {};
+                    
+                    interests.forEach(interest => {
+                        analytics.interestTracking[interest] = (analytics.interestTracking[interest] || 0) + 1;
+                    });
+                }
+                
+                // Track frequency preferences
+                analytics.frequencyPreferences = analytics.frequencyPreferences || {};
+                analytics.frequencyPreferences[formData.frequency] = 
+                    (analytics.frequencyPreferences[formData.frequency] || 0) + 1;
+                
+                saveUserPreference('analytics', analytics);
+                
+                // Dispatch custom event for tracking
+                window.dispatchEvent(new CustomEvent('subscriptionCompleted', {
+                    detail: formData
+                }));
+                
+            } catch (error) {
+                console.error('Error tracking subscription:', error);
+            }
+        }
+        
+        /**
+         * Setup event listeners
+         */
+        function setupEventListeners() {
+            // Mobile menu
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    toggleMobileMenu(navMenu);
+                });
+            }
+            
+            // Track page view
+            saveUserPreference('lastVisitedPage', 'form-action');
+            saveUserPreference('formActionViews', (getUserPreference('formActionViews', 0) + 1));
+        }
+        
+        /**
+         * Share subscription (global function for button)
+         */
+        window.shareSubscription = function() {
+            const shareData = {
+                title: 'Experience Ghana Newsletter',
+                text: 'I just subscribed to the Experience Ghana travel newsletter! Join me in discovering the heart of West Africa.',
+                url: window.location.origin + '/index.html'
+            };
+            
+            if (navigator.share) {
+                navigator.share(shareData).catch(console.error);
+            } else {
+                // Fallback: copy to clipboard
+                const url = shareData.url;
+                navigator.clipboard.writeText(url).then(() => {
+                    alert('Link copied to clipboard! Share it with your friends.');
+                }).catch(() => {
+                    alert(`Share this link: ${url}`);
+                });
+            }
+        };
+        
+        /**
+         * Utility functions
+         */
+        
+        function generateSubscriptionId() {
+            const timestamp = Date.now().toString(36);
+            const random = Math.random().toString(36).substr(2, 5);
+            return `GH-${timestamp}-${random}`.toUpperCase();
+        }
+        
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        function capitalizeFirst(str) {
+            if (!str) return '';
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+        
+        function formatDate(isoString) {
+            const date = new Date(isoString);
+            return date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+    </script>
+</body>
+</html>
